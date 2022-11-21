@@ -19,6 +19,7 @@ class Mypage : AppCompatActivity() {
         //로그아웃 > 로그인페이지로 이동
         btn_signout.setOnClickListener {
             val myIntent = Intent(this, MainActivity::class.java)
+            ///dfdddd
             startActivity(myIntent)
         }
     }

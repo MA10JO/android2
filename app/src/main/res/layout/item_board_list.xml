@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+            android:id="@+id/board_istogether"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:background="@drawable/btn_teal"
+            android:letterSpacing="-0.05"
+            android:text="모집중"
+            android:textColor="@color/white"
+            android:textSize="12dp"/>
+        <TextView
+            android:id="@+id/board_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7월 5일 회의"
+            android:textSize="19sp"
+            android:textColor="@color/black"
+            android:letterSpacing="-0.05"
+            android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+       >
+
+            <TextView
+                android:id="@+id/board_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sia7997"
+
+                android:textSize="12sp"
+                android:textColor="@color/grayDark"
+                android:letterSpacing="-0.05"
+                android:layout_marginBottom="8dp"/>
+
+
+            <TextView
+                android:id="@+id/board_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시간"
+                android:layout_marginLeft="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/grayDark"
+                android:letterSpacing="-0.05"
+                android:layout_marginBottom="8dp"/>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    <!--챗 구분선-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</LinearLayout>

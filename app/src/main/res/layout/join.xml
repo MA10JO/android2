@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:padding="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아이디"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/et_Jid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이메일 형식으로 입력"
+        android:inputType="textEmailAddress"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="비밀번호"/>
+    <EditText
+        android:id="@+id/et_Jpw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호를 입력하세요"
+        android:inputType="textPassword"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="이름"/>
+    <EditText
+        android:id="@+id/et_Jname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이름을 입력하세요"
+        android:inputType=""/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="전화번호"/>
+    <EditText
+        android:id="@+id/et_Jnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="숫자만 입력하세요"
+        android:inputType=""/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="생년월일"/>
+    <EditText
+        android:id="@+id/et_Jbd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="yymmdd"
+        android:inputType=""/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="닉네임"/>
+    <EditText
+        android:id="@+id/et_Jnick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="원하는 닉네임을 입력하세요"
+        android:inputType=""/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_can"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="취소"/>
+
+        <Button
+            android:id="@+id/btn_newJoin"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="회원가입"/>
+
+    </LinearLayout>
+
+</LinearLayout>

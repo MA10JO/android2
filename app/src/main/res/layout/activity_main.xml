@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="500"
+        android:layout_weight="1000"
         android:gravity="center"
         android:weightSum="1400"
         android:orientation="vertical">
@@ -31,7 +31,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="120"
+        android:layout_weight="160"
         android:gravity="center"
         android:weightSum="1440"
         tools:ignore="MissingConstraints"
@@ -56,7 +56,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="130"
+        android:layout_weight="160"
         android:gravity="center"
         android:weightSum="1440"
         tools:ignore="MissingConstraints"
@@ -81,7 +81,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="130"
+        android:layout_weight="160"
         android:gravity="center"
         android:weightSum="1440"
         tools:ignore="MissingConstraints"
@@ -96,7 +96,6 @@
             android:background="#2f9d27"
             android:onClick="ClickBtn"
             android:text="로그인"
-            android:textSize="18dp"
             android:textColor="#FFFFFF"
             tools:ignore="OnClick" />
 
@@ -105,26 +104,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="130"
-        android:gravity="right"
+        android:layout_weight="160"
+        android:gravity="center"
         android:weightSum="1440"
-        android:padding="5dp"
         tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/btn_join"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="400"
-
-            android:background="#ffffff"
+            android:layout_height="35dp"
+            android:layout_weight="1000"
+            android:background="#2f9d27"
             android:onClick="ClickBtn"
             android:text="회원가입"
-            android:textColor="#000000"
-            android:textSize="18dp"
+            android:textColor="#FFFFFF"
             tools:ignore="OnClick"
             tools:layout_editor_absoluteX="181dp"
             tools:layout_editor_absoluteY="413dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="550"
+        android:gravity="center"
+        android:paddingTop="130dp"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="584dp"
+        tools:ignore="MissingConstraints">
+
+
     </LinearLayout>
 
 </LinearLayout>

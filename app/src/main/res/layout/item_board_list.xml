@@ -70,7 +70,6 @@
         </LinearLayout>
 
 
-
     <!--챗 구분선-->
     <View
         android:layout_width="match_parent"

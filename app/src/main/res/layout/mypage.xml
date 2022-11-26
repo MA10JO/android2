@@ -37,20 +37,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_margin="10dp">
         <ImageView
             android:id="@+id/iv_mp"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginRight="10dp"
+            android:layout_gravity="center"
             android:src="@drawable/profile_none" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:layout_gravity="bottom"
-            android:text="아이디"/>
+            android:layout_gravity="center"
+            android:hint=" 아이디    "/>
     </LinearLayout>
 
     <View
@@ -65,7 +66,7 @@
             android:gravity="left"
             android:background="#ffffff"
             android:padding="10dp"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:text="설정"
             ></Button>
     <View
@@ -76,11 +77,10 @@
             android:id="@+id/btn_review"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:gravity="left"
             android:background="#ffffff"
             android:padding="10dp"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:text="나의 음식점 리뷰"
             ></Button>
 
@@ -91,7 +91,7 @@
             android:gravity="left"
             android:background="#ffffff"
             android:padding="10dp"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:text="나의 동네 커뮤니티 게시글"
             ></Button>
     <View
@@ -105,7 +105,7 @@
             android:gravity=""
             android:background="#ffffff"
             android:padding="10dp"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:text="정보수정"
             ></Button>
 

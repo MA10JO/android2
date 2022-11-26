@@ -9,23 +9,21 @@
     android:gravity="top"
     android:padding="15dp">
 
-        <!--커뮤니티탭 타이틀-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginLeft="20dp"
-            android:gravity="center_vertical"
-            android:letterSpacing="-0.05"
-            android:text="회원가입"
-            android:id="@+id/board_name"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
 
     <!--커뮤니티탭 구분선-->
+    <TextView
+        android:id="@+id/board_name"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:letterSpacing="-0.05"
+        android:text="회원가입"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
@@ -37,12 +35,15 @@
         android:text="아이디"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textSize="15sp"/>
     <EditText
         android:id="@+id/et_Jid"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="이메일 형식으로 입력"
+        android:layout_height="35dp"
+        android:background="@drawable/et_edge"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:hint=" 이메일 형식으로 입력"
         android:textSize="14sp"
         android:inputType="textEmailAddress"/>
 
@@ -52,13 +53,31 @@
         android:layout_marginTop="5dp"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="15sp"
+        android:text="이름"/>
+    <EditText
+        android:id="@+id/et_Jname"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/et_edge"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="15sp"
         android:text="비밀번호"/>
     <EditText
         android:id="@+id/et_Jpw"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="비밀번호를 입력하세요"
+        android:layout_height="35dp"
+        android:background="@drawable/et_edge"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:textSize="14sp"
         android:inputType="textPassword"/>
 
@@ -68,30 +87,17 @@
         android:layout_marginTop="5dp"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="이름"/>
-    <EditText
-        android:id="@+id/et_Jname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="이름을 입력하세요"
-        android:textSize="14sp"
-        android:inputType=""/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:text="전화번호"/>
     <EditText
         android:id="@+id/et_Jnum"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/et_edge"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:textSize="14sp"
-        android:hint="숫자만 입력하세요"
+        android:hint=" 숫자만 입력"
         android:inputType="number"/>
 
     <TextView
@@ -100,13 +106,16 @@
         android:layout_marginTop="5dp"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:text="생년월일"/>
     <EditText
         android:id="@+id/et_Jbd"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="yymmdd"
+        android:layout_height="35dp"
+        android:background="@drawable/et_edge"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:hint=" YYMMDD"
         android:textSize="14sp"
         android:inputType="number"/>
 
@@ -116,15 +125,17 @@
         android:layout_marginTop="5dp"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:text="닉네임"/>
     <EditText
         android:id="@+id/et_Jnick"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="사용할 닉네임을 입력하세요"
-        android:textSize="14sp"
-        android:inputType=""/>
+        android:layout_height="35dp"
+        android:background="@drawable/et_edge"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:hint=" 사용할 닉네임을 입력"
+        android:textSize="14sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -153,7 +164,7 @@
             android:layout_height="35dp"
             android:background="@drawable/btn_teal"
             android:letterSpacing="-0.05"
-            android:text="회원가입"
+            android:text="가입하기"
             android:textColor="@color/white"
             android:textSize="15dp" />
     </LinearLayout>

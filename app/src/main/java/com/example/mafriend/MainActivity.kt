@@ -5,29 +5,61 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mafriend.Fragment.CommunityFragment
+import com.example.mafriend.Fragment.HomeFragment
+import com.example.mafriend.Fragment.MyPageFragment
+import com.example.mafriend.Fragment.PromiseFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        with(supportFragmentManager.beginTransaction()) {
+            val fragment5 = HomeFragment()
+            replace(R.id.container, fragment5)
+            commit()
+        }
 
-       //회원가입 페이지로 이동
-        btn_join.setOnClickListener {
-            val myIntent = Intent(this, Join::class.java)
-            startActivity(myIntent)
+        bottom_navigation.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.tab1 -> {
+                    with(supportFragmentManager.beginTransaction()) {
+                        val fragment5 = HomeFragment()
+                        replace(R.id.container, fragment5)
+                        commit()
+                    }
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.tab2 -> {
+                    with(supportFragmentManager.beginTransaction()) {
+                        val fragment5 = CommunityFragment()
+                        replace(R.id.container, fragment5)
+                        commit()
+                    }
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.tab3 -> {
+                    with(supportFragmentManager.beginTransaction()) {
+                        val fragment5 = PromiseFragment()
+                        replace(R.id.container, fragment5)
+                        commit()
+                    }
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.tab4 -> {
+                    with(supportFragmentManager.beginTransaction()) {
+                        val fragment4 = MyPageFragment()
+                        replace(R.id.container, fragment4)
+                        commit()
+                    }
+                    return@setOnNavigationItemSelectedListener true
+                }
+
+            }
+            return@setOnNavigationItemSelectedListener false
         }
 
     }
-
-    fun Login(v: View){
-        if(et_id.text.toString() =="ma10" && et_pw.text.toString() =="1234" ){
-            Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
-
-            startActivity(Intent(this, Com::class.java))
-        }
-        else Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
-    }
-
 
 }

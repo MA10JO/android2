@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="500"
+        android:gravity="center"
+        android:weightSum="1400"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textColor="#47c83e"
+            android:gravity="center"
+            android:textSize="40dp"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enjoy your eating!"
+            android:gravity="center"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="120"
+        android:gravity="center"
+        android:weightSum="1440"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="294dp">
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1000"
+            android:background="@drawable/login_edit"
+            android:hint="아이디"
+            android:inputType="text"
+            android:maxLength="10"
+            android:paddingLeft="15dp"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="130"
+        android:gravity="center"
+        android:weightSum="1440"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="329dp">
+
+        <EditText
+            android:id="@+id/et_pw"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1000"
+            android:background="@drawable/login_edit"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:paddingLeft="15dp"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="130"
+        android:gravity="center"
+        android:weightSum="1440"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="364dp">
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1000"
+            android:background="#2f9d27"
+            android:onClick="ClickBtn"
+            android:text="로그인"
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="130"
+        android:gravity="right"
+        android:weightSum="1440"
+        android:padding="5dp"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btn_join"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="400"
+
+            android:background="#ffffff"
+            android:onClick="ClickBtn"
+            android:text="회원가입"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            tools:ignore="OnClick"
+            tools:layout_editor_absoluteX="181dp"
+            tools:layout_editor_absoluteY="413dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -10,10 +10,10 @@ class Com_w: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.com_w)
 
-
+/*
     btn_search.setOnClickListener {
         val myIntent = Intent(this, Search::class.java)
         startActivity(myIntent)
-    }
+    }*/
     }
 }

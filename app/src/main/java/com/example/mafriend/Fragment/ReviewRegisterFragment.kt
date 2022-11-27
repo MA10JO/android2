@@ -83,14 +83,14 @@ class ReviewRegisterFragment: Fragment() {
                 ) {
                     val result = response.body()
                     Log.e("D", result.toString())
-                 /*   val fragmentA = HomeFragment()
+                   val fragmentA = HomeFragment()
                     val bundle = Bundle()
                     fragmentA.arguments = bundle
                     val transaction = requireActivity().supportFragmentManager.beginTransaction()
                     transaction.add(R.id.container, fragmentA)
                     transaction.replace(R.id.container, fragmentA.apply { arguments = bundle })
                         .addToBackStack(null)
-                    transaction.commit()*/
+                    transaction.commit()
 
                 }
 

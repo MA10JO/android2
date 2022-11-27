@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class PromiseFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var root = inflater.inflate(R.layout.fragment_review_list, container, false)
+        var root = inflater.inflate(R.layout.fragment_board_list, container, false)
 
 
         return root

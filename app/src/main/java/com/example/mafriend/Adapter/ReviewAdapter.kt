@@ -46,7 +46,7 @@ class ReviewAdapter( var items: List<boardGetBody>):RecyclerView.Adapter<ReviewA
         fun setItem(item:boardGetBody){
             itemView.review_title.text = item.title
             itemView.review_user.text = item.author_userid
-
+            itemView.review_time.text = item.created_at.toString().substring(0,10)+" "+item.created_at.toString().substring(11,16)
            // var a= URLDecoder.decode(item.image!!.substring(ApiService.API_URL.length+1), "utf-8");
             //Glide.with(itemView).load(item.image!!).into(itemView.limg)
 

@@ -14,7 +14,9 @@ interface ReviewService {
 
     //게시판 등록
     @POST("review/")
-    fun post_review(@Body boarddto: boardPostBody):Call<List<boardGetBody>>
+    fun post_review(@Body  request:boardPostBody
+
+    ):Call<List<boardGetBody>>
 
 
     //게시판 단건 조회

@@ -2,27 +2,24 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="top"
     android:padding="15dp">
 
-
-    <!--커뮤니티탭 구분선-->
     <TextView
-        android:id="@+id/board_name"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:gravity="center_vertical"
-        android:letterSpacing="-0.05"
-        android:text="회원가입"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_width="wrap_content"
+    android:layout_height="55dp"
+    android:gravity="center_vertical"
+    android:letterSpacing="-0.05"
+    android:text="내 정보"
+    android:id="@+id/board_name"
+    android:textColor="@color/colorPrimaryDark"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"/>
 
     <View
         android:layout_width="match_parent"
@@ -37,15 +34,12 @@
         android:textStyle="bold"
         android:textSize="15sp"/>
     <EditText
-        android:id="@+id/et_Jid"
+        android:id="@+id/user_id"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/et_edge"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:hint=" 이메일 형식으로 입력"
-        android:textSize="14sp"
-        android:inputType="textEmailAddress"/>
+        android:layout_marginBottom="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,7 +50,7 @@
         android:textSize="15sp"
         android:text="이름"/>
     <EditText
-        android:id="@+id/et_Jname"
+        android:id="@+id/user_name"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/et_edge"
@@ -77,9 +71,8 @@
         android:layout_height="35dp"
         android:background="@drawable/et_edge"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:textSize="14sp"
-        android:inputType="textPassword"/>
+        android:layout_marginBottom="8dp" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -90,15 +83,13 @@
         android:textSize="15sp"
         android:text="전화번호"/>
     <EditText
-        android:id="@+id/et_Jnum"
+        android:id="@+id/user_phone"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/et_edge"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:textSize="14sp"
-        android:hint=" 숫자만 입력"
-        android:inputType="number"/>
+        android:layout_marginBottom="8dp"/>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -114,10 +105,8 @@
         android:layout_height="35dp"
         android:background="@drawable/et_edge"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:hint=" YYMMDD"
-        android:textSize="14sp"
-        android:inputType="number"/>
+        android:layout_marginBottom="8dp" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -128,45 +117,25 @@
         android:textSize="15sp"
         android:text="닉네임"/>
     <EditText
-        android:id="@+id/et_Jnick"
+        android:id="@+id/user_nick"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/et_edge"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:hint=" 사용할 닉네임을 입력"
-        android:textSize="14sp"/>
+        android:layout_marginBottom="8dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+
+    <Button
+        android:id="@+id/btn_fin"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
         android:layout_margin="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_can"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:letterSpacing="-0.05"
-            android:text="취소"
-            android:textColor="@color/white"
-            android:textSize="15dp"/>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-
-            />
-        <Button
-            android:id="@+id/btn_newJoin"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:background="@drawable/btn_teal"
-            android:letterSpacing="-0.05"
-            android:text="가입하기"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
-    </LinearLayout>
-
+        android:layout_gravity="right"
+        android:background="@drawable/btn_teal"
+        android:gravity="center"
+        android:letterSpacing="-0.05"
+        android:text="완료"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
 </LinearLayout>

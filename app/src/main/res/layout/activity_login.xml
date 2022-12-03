@@ -47,7 +47,7 @@
             android:background="@drawable/btn_teal_off"
             android:hint="아이디"
             android:inputType="text"
-            android:maxLength="10"
+            android:maxLength="20"
             android:paddingLeft="15dp"
             android:textCursorDrawable="@drawable/cursor"
             android:textSize="15dp" />
@@ -117,7 +117,7 @@
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_weight="400"
-android:layout_marginRight="50dp"
+            android:layout_marginRight="50dp"
             android:background="@drawable/btn_teal_off"
             android:onClick="ClickBtn"
             android:text="회원가입"

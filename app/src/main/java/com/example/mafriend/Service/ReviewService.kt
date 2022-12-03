@@ -40,5 +40,39 @@ interface ReviewService {
     @GET("review/")
     fun get_review():Call<List<boardGetBody>>
 
+    //동네 글 등록
+    // @POST("community/")
+    // fun post_com(@Body request:
+
+    //동네 글 조회
+    // @GET("community/")
+
+    //동네 글 목록
+    // @GET("community/")
+
+    //로그인
+    @FormUrlEncoded
+    @POST("user/signin")
+    fun requestLogin(
+        @Field("email") email:String,
+        @Field("password") password:String
+    ) : Call<loginPost>
+
+
+    //회원가입
+    @FormUrlEncoded
+    @POST("user/signup")
+    //fun post_join(@Body  request: joinPost):Call<joinPost>
+    fun requestJoin(
+        @Field("email") email:String,
+        @Field("password") password:String,
+        @Field("name") name:String,
+        @Field("nickname") nick:String,
+        @Field("phoneNum") phone:String
+    ):Call<joinPost>
+    //Call<ResponseBody> post_accounts(@Part("")RequestBody param1)
+
+
+
 }
 

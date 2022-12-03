@@ -72,6 +72,7 @@
       android:textColor="@color/black"
       android:textSize="14dp"
       app:layout_constraintTop_toBottomOf="@id/write_title"
+
       app:layout_constraintStart_toEndOf="@id/write_town_tv"
       app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -80,7 +81,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="12dp"
-      android:layout_marginRight="5dp"
+      android:layout_marginRight="15dp"
       android:letterSpacing="-0.05"
       android:text="평점"
       android:textColor="@color/colorPrimaryDark"
@@ -101,8 +102,43 @@
       app:layout_constraintStart_toEndOf="@id/write_rate_tv"
       app:layout_constraintEnd_toEndOf="parent"/>
 
+  <TextView
+      android:id="@+id/write_photo_tv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="25dp"
+      android:layout_marginRight="5dp"
+      android:text="음식자진"
+      android:textSize="14dp"
+      android:textColor="@color/colorPrimaryDark"
+      android:letterSpacing="-0.05"
+      app:layout_constraintTop_toBottomOf="@id/write_rate_tv"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/write_title"/>
+  <Button
 
+      android:id="@+id/write_gallery"
+      android:layout_width="70dp"
+      android:layout_height="35dp"
+      android:layout_marginTop="25dp"
+      android:background="@drawable/btn_teal"
+      android:text="사진등록"
+      android:textSize="12dp"
+      android:textColor="@color/white"
+      android:letterSpacing="-0.05"
+      app:layout_constraintTop_toBottomOf="@id/write_rate_tv"
+      app:layout_constraintLeft_toRightOf="@id/write_photo_tv"
+      app:layout_constraintEnd_toEndOf="parent"/>
+  <ImageView
+      android:id="@+id/food_image"
+      android:layout_width="150dp"
+      android:layout_height="100dp"
+      android:layout_marginRight="10dp"
+      android:src="@drawable/ic_baseline_center_focus_weak_24"
 
+      app:layout_constraintTop_toBottomOf="@id/write_photo_tv"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"/>
 
   <!-- 내용 -->
   <EditText
@@ -118,7 +154,7 @@
       android:textSize="14dp"
       android:textColor="@color/black"
       android:textColorHint="@color/colorPrimaryDark"
-      app:layout_constraintTop_toBottomOf="@id/write_rate"
+      app:layout_constraintTop_toBottomOf="@id/food_image"
       app:layout_constraintBottom_toTopOf="@id/write_complete" />
 
 

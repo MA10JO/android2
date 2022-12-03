@@ -81,17 +81,12 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/at_logo"
-                    android:layout_marginBottom="20dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lineSpacingMultiplier="1.2"
-                    android:text="상호명: Avatwin\n대표자: 체크메이트\n이메일: checkmate@gmail.com"
+                    android:text="상호명: MaFoorend\n대표자: MA10JO\n이메일: ma10jo@gmail.com"
                     android:textSize="8dp"
                     android:textColor="#ff191919"
                     android:letterSpacing="-0.02"

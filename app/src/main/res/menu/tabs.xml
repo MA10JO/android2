@@ -6,6 +6,7 @@
         android:id="@+id/tab1"
         android:enabled="true"
         app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_home_24"
         android:layout_marginRight="10dp"
         android:title="홈"/>
 
@@ -13,18 +14,21 @@
         android:id="@+id/tab2"
         android:enabled="true"
         app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_speaker_notes_24"
         android:layout_marginLeft="10dp"
         android:title="동네커뮤니티"/>
     <item
         android:id="@+id/tab3"
         android:enabled="true"
         app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_soap_24"
         android:layout_marginLeft="10dp"
         android:title="밥약속"/>
     <item
         android:id="@+id/tab4"
         android:enabled="true"
         app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_perm_contact_calendar_24"
         android:layout_marginLeft="10dp"
         android:title="마이페이지"/>
 

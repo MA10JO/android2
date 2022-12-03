@@ -12,9 +12,17 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.avatwin.Converter.LocalDateTimeConverter
+import com.example.mafriend.Adapter.CommentAdapter
+import com.example.mafriend.DataClass.boardGetBody
+import com.example.mafriend.DataClass.commentGetBody
+import com.example.mafriend.DataClass.commentPostBody
 import com.example.mafriend.R
+import com.example.mafriend.Service.ReviewService
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.*
+import kotlinx.android.synthetic.main.fragment_review.*
+import kotlinx.android.synthetic.main.fragment_review.view.*
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -26,9 +34,12 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.time.LocalDateTime
 
 class ReviewDetailFragment(): Fragment() {
-
+    var pk=0
+    var author=0
+    var category=""
     init{ instance = this }
 
+    lateinit var adapter: CommentAdapter
     companion object{
         private var instance: ReviewDetailFragment? = null
         fun getInstance(): ReviewDetailFragment?
@@ -37,21 +48,21 @@ class ReviewDetailFragment(): Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var root = inflater.inflate(R.layout.fragment_review_register, container, false)
+        var root = inflater.inflate(R.layout.fragment_review, container, false)
         val layoutManager = LinearLayoutManager(requireActivity())
-      /*  root.recyclerview_comment.layoutManager = layoutManager
+        root.recyclerview_comment.layoutManager = layoutManager
 
+        val bundle = arguments
+
+        if(bundle != null) {
+            pk= bundle.getInt("reviewNum")!!
+            category=bundle.getString("reviewCategory")!!
+
+        }
         //init
         initBoard()
-        root.emoticon_group.isVisible=false
-        root.emoticon_add_button.setOnClickListener{
-            root.emoticon_group.isVisible=true
-            //기본 아바타 이모티콘 설정해주기
-            setEmoticon()
-            //이모티콘 클릭 시 채팅에
-            selectEmoticon()
-        }
 
+        /*
         //수정
         root.board_update.setOnClickListener {
             val fragmentA = BoardUpdateFragment()
@@ -66,16 +77,16 @@ class ReviewDetailFragment(): Fragment() {
         //삭제
         root.board_delete.setOnClickListener{
             deleteBoard()
-        }
+        }*/
 
         //댓글
         root.comment_button.setOnClickListener{
-            registerComment(root.comment_text.text.toString(),selectEmoticonUrl)
+            registerComment(root.comment_text.text.toString())
         }
-*/
+
         return root
     }
-/*
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun initBoard(){
 
@@ -85,73 +96,65 @@ class ReviewDetailFragment(): Fragment() {
 
 
         //채널별 게시글 가져오기
-        val okHttpClient = OkHttpClient.Builder().addInterceptor(AuthInterceptor()).build()
         var retrofit = Retrofit.Builder()
-                .client(okHttpClient)
-                .baseUrl(BoardService.API_URL)
+                .baseUrl(ReviewService.API_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
-        var apiService = retrofit.create(BoardService::class.java)
-        var tests = apiService.get_BoardById(App.prefs.boardSeq!!.toLong())
-        tests.enqueue(object : Callback<boardGetBodyById> {
-            override fun onResponse(call: Call<boardGetBodyById>, response: Response<boardGetBodyById>) {
+        var apiService = retrofit.create(ReviewService::class.java)
+
+        apiService.get_reviewById(pk).enqueue(object : Callback<boardGetBody> {
+            override fun onResponse(call: Call<boardGetBody>, response: Response<boardGetBody>) {
                 if (response.isSuccessful) {
                     var mList = response.body()!!
-                    Log.e("board",mList.data.toString())
+                    Log.e("board",mList.toString())
 
                     //날짜
-                    var date = mList.data.createDate.toString().substring(0,10)+" "+mList.data.createDate.toString().substring(11,16)
-                    Log.i("board",date)
+                    var date = mList.created_at.toString().substring(0,10)+" "+mList.created_at.toString().substring(11,16)
                     board_detail_date.setText(date)
+                    /////////동네 정보 메인페이지에서 name 번들로 받아오기
+                    board_category.setText(category)
                     //제목
-                    board_detail_title.setText(mList.data.title)
+                    board_detail_title.setText(mList.title)
                     //이미지
-                    //board_detail_image
-                    Log.i("boardDetail",mList.data.userImage.toString())
-                    Log.i("boardDetail2",mList.data.userImg.toString())
-                    Glide.with(view!!).load(mList.data.userImage).into(board_detail_image)
-                    //별명
-                    board_detail_name.setText(mList.data.username)
+                    //Glide.with(view!!).load(mList.data.userImage).into(board_detail_image)
+                    //작성자
+                    board_detail_name.setText(mList.author_userid)
+                    author=mList.author!!
                     //내용
-                    board_detail_content.setText(mList.data.content)
+                    board_detail_content.setText(mList.content)
                     //댓글 리스트
-                    adapter = commentAdapter()
-/*
-                    for(i:commentBody in mList.data.comments){
-                        if(i.username==App.prefs.userId){
-                            comment_mores.visibility=View.VISIBLE
-                        }else{
-                            comment_mores.visibility=View.GONE
-                        }
-                    }*/
+                    adapter = CommentAdapter()
 
-                    adapter.items=mList.data.comments
+                    adapter.items=mList.post_comment
                     recyclerview_comment.adapter= adapter
+                    //평점
+                    write_rate.rating=mList.star_point!!.toFloat()
                 } }
 
-            override fun onFailure(call: Call<boardGetBodyById>, t: Throwable) {
+            override fun onFailure(call: Call<boardGetBody>, t: Throwable) {
                 Log.e("team", "OnFailuer+${t.message}")
             } })
 
     }
 
 
-    fun registerComment(content:String,selectEmoticonUrl:String){
-        val okHttpClient = OkHttpClient.Builder().addInterceptor(AuthInterceptor()).build()
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun registerComment(content:String){
+        val gson = GsonBuilder()
+            .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+            .registerTypeAdapter(LocalDateTime::class.java, LocalDateTimeConverter()).create()
         var retrofit = Retrofit.Builder()
-                .client(okHttpClient)
-                .baseUrl(CommentService.API_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(ReviewService.API_URL)
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .addConverterFactory(ScalarsConverterFactory.create()).build()
 
-        var apiService = retrofit.create(CommentService::class.java)
+        var apiService = retrofit.create(ReviewService::class.java)
 
-        apiService.post_comment(App.prefs.boardSeq!!.toLong(),content,selectEmoticonUrl).enqueue(object : Callback<commentGetBody> {
+        val request =commentPostBody(pk,2,content)
+        apiService.post_comment(request).enqueue(object : Callback<commentGetBody> {
             override fun onResponse(call: Call<commentGetBody>, response: Response<commentGetBody>) {
                 val result = response.body()
-                //Log.e("성공",result.toString())
-                emoticon_group.visibility=View.GONE
-                adapter.addItem(result!!.data)
+                adapter.addItem(result!!)
                 comment_text.setText("")
             }
 
@@ -160,7 +163,7 @@ class ReviewDetailFragment(): Fragment() {
             }
         })
 
-    }*/
+    }
 
 }
 

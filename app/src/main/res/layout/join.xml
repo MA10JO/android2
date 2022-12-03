@@ -30,6 +30,7 @@
         android:background="@color/gray" />
 
     <TextView
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="아이디"
@@ -40,7 +41,7 @@
         android:id="@+id/et_Jid"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:background="@drawable/et_edge"
+        android:background="@drawable/btn_teal_off"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:hint=" 이메일 형식으로 입력"
@@ -59,7 +60,7 @@
         android:id="@+id/et_Jname"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:background="@drawable/et_edge"
+        android:background="@drawable/btn_teal_off"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp" />
 
@@ -75,7 +76,7 @@
         android:id="@+id/et_Jpw"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:background="@drawable/et_edge"
+        android:background="@drawable/btn_teal_off"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:textSize="14sp"
@@ -93,7 +94,7 @@
         android:id="@+id/et_Jnum"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:background="@drawable/et_edge"
+        android:background="@drawable/btn_teal_off"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:textSize="14sp"
@@ -112,7 +113,7 @@
         android:id="@+id/et_Jbd"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:background="@drawable/et_edge"
+        android:background="@drawable/btn_teal_off"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:hint=" YYMMDD"
@@ -131,7 +132,7 @@
         android:id="@+id/et_Jnick"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:background="@drawable/et_edge"
+        android:background="@drawable/btn_teal_off"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:hint=" 사용할 닉네임을 입력"
@@ -145,11 +146,12 @@
 
         <Button
             android:id="@+id/btn_can"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
             android:letterSpacing="-0.05"
             android:text="취소"
-            android:textColor="@color/white"
+            android:background="@drawable/btn_teal_off"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="15dp"/>
 
         <View
@@ -160,8 +162,8 @@
             />
         <Button
             android:id="@+id/btn_newJoin"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
             android:background="@drawable/btn_teal"
             android:letterSpacing="-0.05"
             android:text="가입하기"

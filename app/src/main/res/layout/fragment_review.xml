@@ -21,7 +21,7 @@ android:orientation="vertical"
             android:layout_marginBottom="5dp"
             android:gravity="center_vertical"
             android:letterSpacing="-0.05"
-            android:text="밥약속 게시글"
+            android:text="리뷰 게시글"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -69,28 +69,21 @@ android:orientation="vertical"
 
 
                 <!--작성 날짜-->
-                <TextView
-                    android:id="@+id/board_detail_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <Button
+                    android:id="@+id/board_category"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
                     android:layout_marginBottom="5dp"
                     android:letterSpacing="-0.05"
-                    android:text="2021.11.01"
-                    android:textColor="@color/grayDark"
-                    android:textSize="12dp" />
+                    android:text="쌍문동"
+                    android:background="@drawable/btn_teal_off"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
               <LinearLayout
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:orientation="horizontal">
-                <Button
-                    android:id="@+id/board_istogether"
-                    android:layout_width="60dp"
-                    android:layout_height="35dp"
-                    android:background="@drawable/btn_teal"
-                    android:letterSpacing="-0.05"
-                    android:text="모집중"
-                    android:textColor="@color/white"
-                    android:textSize="12dp"/>
+
                 <!--제목 텍스트-->
                 <TextView
                     android:id="@+id/board_detail_title"
@@ -115,13 +108,11 @@ android:orientation="vertical"
                         android:gravity="center"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/board_detail_image"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginRight="10dp"
-                            android:src="@drawable/profile_none" />
 
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
                         <TextView
                             android:id="@+id/board_detail_name"
                             android:layout_width="wrap_content"
@@ -130,6 +121,16 @@ android:orientation="vertical"
                             android:text="시미즈"
                             android:textColor="@color/black"
                             android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/board_detail_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:letterSpacing="-0.05"
+                            android:text="2021.11.01"
+                            android:textColor="@color/grayDark"
+                            android:textSize="12dp" /></LinearLayout>
                     </LinearLayout>
 
                     <!--작성자 정보-->
@@ -175,8 +176,47 @@ android:orientation="vertical"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/write_rate_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="5dp"
+                    android:letterSpacing="-0.05"
+                    android:text="평점"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toStartOf="@id/write_rate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/write_town_tv" />
 
+                <RatingBar
+                    android:id="@+id/write_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:letterSpacing="-0.05"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/write_town"
+                    app:layout_constraintStart_toEndOf="@id/write_rate_tv"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                </LinearLayout>
 
+                <ImageView
+                    android:id="@+id/food_image"
+                    android:layout_width="400dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/spage"
+
+                    app:layout_constraintTop_toBottomOf="@id/write_photo_tv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -220,7 +260,8 @@ android:orientation="vertical"
                 android:orientation="horizontal">
                 <EditText
                     android:id="@+id/comment_text"
-                    android:layout_width="280dp"
+                    android:layout_width="330dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPrimary"
                     android:letterSpacing="-0.05"

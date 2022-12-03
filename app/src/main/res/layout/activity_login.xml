@@ -20,11 +20,12 @@
             android:text="Welcome"
             android:textColor="#47c83e"
             android:gravity="center"
-            android:textSize="40dp"></TextView>
+            android:textSize="50dp"></TextView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enjoy your eating!"
+            android:textSize="20dp"
             android:gravity="center"></TextView>
     </LinearLayout>
 
@@ -41,9 +42,9 @@
         <EditText
             android:id="@+id/et_id"
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:layout_weight="1000"
-            android:background="@drawable/login_edit"
+            android:background="@drawable/btn_teal_off"
             android:hint="아이디"
             android:inputType="text"
             android:maxLength="10"
@@ -66,9 +67,9 @@
         <EditText
             android:id="@+id/et_pw"
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:layout_weight="1000"
-            android:background="@drawable/login_edit"
+            android:background="@drawable/btn_teal_off"
             android:hint="비밀번호"
             android:inputType="textPassword"
             android:maxLength="16"
@@ -91,9 +92,9 @@
         <Button
             android:id="@+id/btn_login"
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:layout_weight="1000"
-            android:background="#2f9d27"
+            android:background="@drawable/btn_teal"
             android:onClick="ClickBtn"
             android:text="로그인"
             android:textSize="18dp"
@@ -114,13 +115,13 @@
         <Button
             android:id="@+id/btn_join"
             android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:layout_weight="400"
-
-            android:background="#ffffff"
+android:layout_marginRight="50dp"
+            android:background="@drawable/btn_teal_off"
             android:onClick="ClickBtn"
             android:text="회원가입"
-            android:textColor="#000000"
+            android:textColor="#4CAF50"
             android:textSize="18dp"
             tools:ignore="OnClick"
             tools:layout_editor_absoluteX="181dp"

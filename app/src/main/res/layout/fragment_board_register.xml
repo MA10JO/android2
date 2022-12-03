@@ -63,18 +63,18 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/write_title" />
 
-  <EditText
+  <Spinner
       android:id="@+id/write_town"
       android:layout_width="0dp"
+      android:spinnerMode="dropdown"
       android:layout_height="wrap_content"
       android:backgroundTint="@color/colorPrimary"
       android:letterSpacing="-0.05"
       android:textColor="@color/black"
       android:textSize="14dp"
-      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/write_title"
       app:layout_constraintStart_toEndOf="@id/write_town_tv"
-      app:layout_constraintTop_toBottomOf="@id/write_title" />
-
+      app:layout_constraintEnd_toEndOf="parent"/>
   <!-- 내용 -->
   <EditText
       android:id="@+id/write_content"

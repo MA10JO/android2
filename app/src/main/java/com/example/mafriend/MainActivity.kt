@@ -1,11 +1,8 @@
 package com.example.mafriend
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mafriend.Fragment.CommunityFragment
+import com.example.mafriend.Fragment.CommunityDetailFragment
 import com.example.mafriend.Fragment.HomeFragment
 import com.example.mafriend.Fragment.MyPageFragment
 import com.example.mafriend.Fragment.PromiseFragment
@@ -33,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.tab2 -> {
                     with(supportFragmentManager.beginTransaction()) {
-                        val fragment5 = CommunityFragment()
+                        val fragment5 = CommunityDetailFragment()
                         replace(R.id.container, fragment5)
                         commit()
                     }

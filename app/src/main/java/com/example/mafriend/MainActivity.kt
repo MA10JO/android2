@@ -1,14 +1,11 @@
 package com.example.mafriend
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mafriend.Fragment.CommunityFragment
 import com.example.mafriend.Fragment.HomeFragment
 import com.example.mafriend.Fragment.MyPageFragment
-import com.example.mafriend.Fragment.PromiseFragment
+import com.example.mafriend.Fragment.AdvFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -41,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.tab3 -> {
                     with(supportFragmentManager.beginTransaction()) {
-                        val fragment5 = PromiseFragment()
+                        val fragment5 = AdvFragment()
                         replace(R.id.container, fragment5)
                         commit()
                     }

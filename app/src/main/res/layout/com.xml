@@ -1,107 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--카테고리 타이틀-->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="55dp">
 
-        <!--커뮤니티탭 타이틀-->
         <TextView
+            android:id="@+id/board_detail_category"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center_vertical"
             android:letterSpacing="-0.05"
-            android:text="동네 커뮤니티 게시판"
-            android:id="@+id/board_name"
+            android:text="동네 커뮤니티 게시글"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/btn_write"
+            android:id="@+id/board_retouch"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginRight="20dp"
-            android:src="@drawable/ic_write"
-            app:tint="@color/colorPrimary"
-            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="right"
+            android:src="@null"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorPrimary" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-    <!--커뮤니티탭 구분선-->
+    <!--카테고리 구분선-->
     <View
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:background="@color/gray" />
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/scrollView"
-        android:layout_marginTop="10dp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:background="@color/gray">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--게시글 목록-->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView_board_more"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:background="@color/white" />
-
-            <!--Footer-->
             <LinearLayout
-                android:id="@+id/footer"
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
-                android:background="@color/gray"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="15dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp">
+
+
+                <!--작성 날짜-->
+                <TextView
+                    android:id="@+id/board_detail_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:letterSpacing="-0.05"
+                    android:text="2021.11.01"
+                    android:textColor="@color/grayDark"
+                    android:textSize="12dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/board_istogether"
+                        android:layout_width="60dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/btn_teal"
+                        android:letterSpacing="-0.05"
+                        android:text="모집중"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"/>
+                    <!--제목 텍스트-->
+                    <TextView
+                        android:id="@+id/board_detail_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="-0.05"
+                        android:text="오늘 공지"
+                        android:textColor="@color/black"
+                        android:textSize="19dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!--작성자 정보-->
+                    <LinearLayout
+                        android:id="@+id/writer_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/board_detail_image"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/profile_none" />
+
+                        <TextView
+                            android:id="@+id/board_detail_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="-0.05"
+                            android:text="시미즈"
+                            android:textColor="@color/black"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <!--작성자 정보-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/board_update"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="220dp"
+                            android:letterSpacing="-0.05"
+                            android:text="수정"
+                            android:textColor="@color/black"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/board_delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:letterSpacing="-0.05"
+                            android:text="삭제"
+                            android:textColor="@color/black"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--구분선-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/gray" />
+
+            <!--본문-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/at_logo"
-                    android:layout_marginBottom="20dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:lineSpacingMultiplier="1.2"
-                    android:text="상호명: Avatwin\n대표자: 체크메이트\n이메일: checkmate@gmail.com"
-                    android:textSize="8dp"
-                    android:textColor="#ff191919"
-                    android:letterSpacing="-0.02"
-                    android:layout_marginBottom="20dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/board_detail_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="-0.05"
+                        android:text="안녕하세요~ 오늘 회의 안건에 대해 내일 나눠보는게 좋겠습니다! 자세한 사항은 쪽지 부탁드립니다."
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
+            <!--구분선-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/gray" />
+
+            <!--댓글-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:paddingRight="20dp"
+                tools:ignore="MissingClass" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/comment_text"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:letterSpacing="-0.05"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/comment_button"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/btn_teal"
+                    android:letterSpacing="-0.05"
+                    android:text="완료"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"/>
+            </LinearLayout>
+
         </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
+    </LinearLayout>
 </LinearLayout>
+
+
+
+
+

@@ -30,6 +30,22 @@
         android:background="@color/gray" />
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text="이름"/>
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/btn_teal_off"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +54,7 @@
         android:textStyle="bold"
         android:textSize="15sp"/>
     <EditText
-        android:id="@+id/et_Jid"
+        android:id="@+id/et_id"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/btn_teal_off"
@@ -48,21 +64,6 @@
         android:textSize="14sp"
         android:inputType="textEmailAddress"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:text="이름"/>
-    <EditText
-        android:id="@+id/et_Jname"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:background="@drawable/btn_teal_off"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -73,7 +74,7 @@
         android:textSize="15sp"
         android:text="비밀번호"/>
     <EditText
-        android:id="@+id/et_Jpw"
+        android:id="@+id/et_pw"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/btn_teal_off"
@@ -89,9 +90,28 @@
         android:textColor="#000000"
         android:textStyle="bold"
         android:textSize="15sp"
+        android:text="비밀번호 확인"/>
+    <EditText
+        android:id="@+id/et_repw"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/btn_teal_off"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="14sp"
+        android:inputType="textPassword"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="15sp"
         android:text="전화번호"/>
     <EditText
-        android:id="@+id/et_Jnum"
+        android:id="@+id/et_num"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/btn_teal_off"
@@ -101,24 +121,6 @@
         android:hint=" 숫자만 입력"
         android:inputType="number"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:text="생년월일"/>
-    <EditText
-        android:id="@+id/et_Jbd"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:background="@drawable/btn_teal_off"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:hint=" YYMMDD"
-        android:textSize="14sp"
-        android:inputType="number"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -129,7 +131,7 @@
         android:textSize="15sp"
         android:text="닉네임"/>
     <EditText
-        android:id="@+id/et_Jnick"
+        android:id="@+id/et_nick"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/btn_teal_off"

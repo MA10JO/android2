@@ -2,7 +2,7 @@ package com.example.mafriend
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mafriend.Fragment.CommunityFragment
+import com.example.mafriend.Fragment.CommunityDetailFragment
 import com.example.mafriend.Fragment.HomeFragment
 import com.example.mafriend.Fragment.MyPageFragment
 import com.example.mafriend.Fragment.AdvFragment
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.tab2 -> {
                     with(supportFragmentManager.beginTransaction()) {
-                        val fragment5 = CommunityFragment()
+                        val fragment5 = CommunityDetailFragment()
                         replace(R.id.container, fragment5)
                         commit()
                     }

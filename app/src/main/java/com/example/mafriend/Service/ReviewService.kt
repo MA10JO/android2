@@ -56,7 +56,7 @@ interface ReviewService {
     fun requestLogin(
         @Field("email") email:String,
         @Field("password") password:String
-    ) : Call<loginPost>
+    ) : Call<ResponseBody>
 
 
     //회원가입

@@ -118,8 +118,8 @@ class AdvDetailFragment(): Fragment() {
                     //이미지
                     //Glide.with(view!!).load(mList.data.userImage).into(board_detail_image)
                     //작성자
-                    board_detail_name.setText(mList.author_userid)
-                    //author=mList.author!!
+                    board_detail_name.setText(mList.nickname)
+                    //author=mList.name!!
                     //내용
                     board_detail_content.setText(mList.content)
                     //댓글 리스트

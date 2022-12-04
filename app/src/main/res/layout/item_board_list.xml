@@ -21,7 +21,7 @@
             android:id="@+id/board_istogether"
             android:layout_width="60dp"
             android:layout_height="35dp"
-            android:background="@drawable/btn_teal"
+            android:background="@drawable/adv_teal"
             android:letterSpacing="-0.05"
             android:text="모집중"
             android:textColor="@color/white"

@@ -49,7 +49,7 @@ class CommentAdapter():RecyclerView.Adapter<CommentAdapter.ViewHolder>(){
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
 
         fun setItem(item:commentGetBody){
-            itemView.comment_username.text = item.author_userid
+            itemView.comment_username.text = item.nickname
             itemView.comment_content.text = item.content
            // var a= URLDecoder.decode(item.image!!.substring(ApiService.API_URL.length+1), "utf-8");
 

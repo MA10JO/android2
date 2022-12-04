@@ -18,6 +18,7 @@ import com.example.mafriend.DataClass.boardGetBody
 import com.example.mafriend.DataClass.commentGetBody
 import com.example.mafriend.DataClass.commentPostBody
 import com.example.mafriend.R
+import com.example.mafriend.Service.ComService
 import com.example.mafriend.Service.ReviewService
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.*
@@ -33,7 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.time.LocalDateTime
 
-class ReviewDetailFragment(): Fragment() {
+class ComDetailFragment(): Fragment() {
     var pk=0
     var author=0
     var category=""
@@ -41,14 +42,14 @@ class ReviewDetailFragment(): Fragment() {
 
     lateinit var adapter: CommentAdapter
     companion object{
-        private var instance: ReviewDetailFragment? = null
-        fun getInstance(): ReviewDetailFragment?
+        private var instance: ComDetailFragment? = null
+        fun getInstance(): ComDetailFragment?
         { return instance  }}
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var root = inflater.inflate(R.layout.fragment_review, container, false)
+        var root = inflater.inflate(R.layout.fragment_com, container, false)
         val layoutManager = LinearLayoutManager(requireActivity())
         root.recyclerview_comment.layoutManager = layoutManager
 
@@ -100,9 +101,9 @@ class ReviewDetailFragment(): Fragment() {
                 .baseUrl(ReviewService.API_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
-        var apiService = retrofit.create(ReviewService::class.java)
+        var apiService = retrofit.create(ComService::class.java)
 
-        apiService.get_reviewById(pk).enqueue(object : Callback<boardGetBody> {
+        apiService.get_comById(pk).enqueue(object : Callback<boardGetBody> {
             override fun onResponse(call: Call<boardGetBody>, response: Response<boardGetBody>) {
                 if (response.isSuccessful) {
                     var mList = response.body()!!
@@ -119,7 +120,7 @@ class ReviewDetailFragment(): Fragment() {
                     //Glide.with(view!!).load(mList.data.userImage).into(board_detail_image)
                     //작성자
                     board_detail_name.setText(mList.nickname)
-                    //author=mList.name!!
+                   // author=mList.name!!
                     //내용
                     board_detail_content.setText(mList.content)
                     //댓글 리스트
@@ -127,8 +128,7 @@ class ReviewDetailFragment(): Fragment() {
 
                     adapter.items=mList.post_comment
                     recyclerview_comment.adapter= adapter
-                    //평점
-                    write_rate.rating=mList.star_point!!.toFloat()
+
                 } }
 
             override fun onFailure(call: Call<boardGetBody>, t: Throwable) {
@@ -144,11 +144,11 @@ class ReviewDetailFragment(): Fragment() {
             .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
             .registerTypeAdapter(LocalDateTime::class.java, LocalDateTimeConverter()).create()
         var retrofit = Retrofit.Builder()
-                .baseUrl(ReviewService.API_URL)
+                .baseUrl(ComService.API_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addConverterFactory(ScalarsConverterFactory.create()).build()
 
-        var apiService = retrofit.create(ReviewService::class.java)
+        var apiService = retrofit.create(ComService::class.java)
 
         val request =commentPostBody(pk,2,content)
         apiService.post_comment(request).enqueue(object : Callback<commentGetBody> {

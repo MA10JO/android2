@@ -31,8 +31,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="120"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:weightSum="1440"
         tools:ignore="MissingConstraints"
@@ -45,7 +44,7 @@
             android:layout_height="45dp"
             android:layout_weight="1000"
             android:background="@drawable/btn_teal_off"
-            android:hint="아이디"
+            android:hint="이메일"
             android:inputType="text"
             android:maxLength="20"
             android:paddingLeft="15dp"
@@ -55,9 +54,9 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="130"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:weightSum="1440"
         tools:ignore="MissingConstraints"

@@ -33,7 +33,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.time.LocalDateTime
 
-class ReviewDetailFragment(): Fragment() {
+class AdvDetailFragment(): Fragment() {
     var pk=0
     var author=0
     var category=""
@@ -41,14 +41,14 @@ class ReviewDetailFragment(): Fragment() {
 
     lateinit var adapter: CommentAdapter
     companion object{
-        private var instance: ReviewDetailFragment? = null
-        fun getInstance(): ReviewDetailFragment?
+        private var instance: AdvDetailFragment? = null
+        fun getInstance(): AdvDetailFragment?
         { return instance  }}
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var root = inflater.inflate(R.layout.fragment_review, container, false)
+        var root = inflater.inflate(R.layout.fragment_adv, container, false)
         val layoutManager = LinearLayoutManager(requireActivity())
         root.recyclerview_comment.layoutManager = layoutManager
 
@@ -127,8 +127,7 @@ class ReviewDetailFragment(): Fragment() {
 
                     adapter.items=mList.post_comment
                     recyclerview_comment.adapter= adapter
-                    //평점
-                    write_rate.rating=mList.star_point!!.toFloat()
+
                 } }
 
             override fun onFailure(call: Call<boardGetBody>, t: Throwable) {

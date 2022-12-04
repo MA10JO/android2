@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_login.et_id
 import kotlinx.android.synthetic.main.activity_login.et_pw
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.join.*
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -52,27 +53,28 @@ class LoginActivity : AppCompatActivity() {
             }
             else Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()*/
 
-           loginService.requestLogin(email, password).enqueue(object : Callback<loginPost>{
+           loginService.requestLogin(email, password).enqueue(object : Callback<ResponseBody>{
 
-            override fun onFailure(call: Call<loginPost>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 Log.e("Login", t.message.toString())
-                var dialog = AlertDialog.Builder(this@LoginActivity)
-                dialog.setTitle("에러")
-                dialog.setMessage("호출 실패")
-                dialog.show()
+              //  var dialog = AlertDialog.Builder(this@LoginActivity)
+                //dialog.setTitle("에러")
+                //dialog.setMessage("호출 실패")
+                //dialog.show()
             }
 
-            override fun onResponse(call: Call<loginPost>, response: Response<loginPost>) {
-                login = response.body()
-                Log.d("LOGIN", "email : " + login?.email)
-                Log.d("LOGIN", "password : " + login?.password)
-                var dialog = AlertDialog.Builder(this@LoginActivity)
-                dialog.setTitle(login?.email)
-                dialog.setMessage(login?.password)
-                dialog.show()
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+               // login = response.body()
+                //Log.d("LOGIN", "email : " + login?.email)
+                //Log.d("LOGIN", "password : " + login?.password)
+                //var dialog = AlertDialog.Builder(this@LoginActivity)
+                //dialog.setTitle(login?.email)
+                //dialog.setMessage(login?.password)
+                //dialog.show()
                 // >> 메인페이지로 이동하도록
-
-
+                Log.e("Login", "com")
+                var intent = Intent(applicationContext, MainActivity::class.java)
+                startActivityForResult(intent, 0)
             }
 
             })
